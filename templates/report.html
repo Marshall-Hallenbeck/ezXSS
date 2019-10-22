@@ -35,10 +35,10 @@
                         <tr><td>Cookies</td><td>{{report[cookies]}}</td></tr>
                         <tr><td>Local Storage</td><td>{{report[localstorage]}}</td></tr>
                         <tr><td>Session Storage</td><td>{{report[sessionstorage]}}</td></tr>
-                        <tr><td>DOM</td><td style="padding-right:0px"><textarea spellcheck=false>{{report[dom]}}</textarea></td></tr>
+                        <tr><td>DOM</td><td style="padding-right:0px"><textarea style="resize:vertical" spellcheck=false>{{report[dom]}}</textarea></td></tr>
                         <tr><td>Origin</td><td>{{report[origin]}}</td></tr>
                         <tr><td>Time</td><td>{{report[time]}}</td></tr>
-                        <tr><td>Screenshot</td><td><img src="/assets/img/report-{{report[screenshot]}}.png" onerror="this.parentElement.innerHTML = '';"></td></tr>
+			            <tr><td>Screenshot</td><td><a href="/assets/img/report-{{report[screenshot]}}.png" onerror="this.parentElement.innerHTML = '';">report-{{report[screenshot]}}</a></td></tr>
                     </thead>
                   </table>
                 </div>
