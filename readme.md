@@ -30,16 +30,31 @@ Some features ezXSS has
 
 ## Required
 * A host with PHP 7.1 or up
+    * need `php-mysql` as well
 * A domain name (consider a short one)
 * An SSL if you want to test on https websites (consider Cloudflare or Let's Encrypt for a free SSL)
 
 ## Installation
 ezXSS is ez to install
 
+* (for Ubuntu/Debian): `sudo apt install php php-mysql`
+* (if using Apache): `a2enmod headers`
 * Clone the repository and put the files in the document root
 * Create an empty database and provide your database information in 'src/Database.php'
 * Visit /manage/install in your browser and setup a password and email
 * Done! That was ez right?
+
+## If already using Apache
+Be sure to update your Apache config:
+```
+DocumentRoot /var/www/html/ezxss
+    <Directory "/var/www/html/ezxss">
+       Options FollowSymLinks
+       AllowOverride All
+       Order allow,deny
+       Allow from all
+</Directory>
+```
 
 ## Demo
 For a demo visit [demo.ezxss.com/manage](https://demo.ezxss.com/manage) with password *demo1234*. Please note that some features might be disabled in the demo version.
